@@ -16,6 +16,20 @@ export class Person {
     readonly _name: string;
     readonly _secondName: string;
     readonly _age: number;
+
+    constructor(persona: IPersonData) {
+        this._name = 'Ivan';
+        this._secondName = 'Petrov';
+        this._age = 20;
+    }
+    getData(): IPersonData {
+        const persona = {
+            name: 'Ivan',
+            secondName: 'Petrov',
+            age: 20,
+        };
+        return persona;
+    }
 }
 
 /*
@@ -23,5 +37,19 @@ export class Person {
 2. Добавьте метод getData(), возвращающий объект, соответствующий интерфейсу IStudentData
  */
 export class Student extends Person {
-    readonly _phone: string;
+    readonly _phone: string = '+7(555)555-55-50';
+
+    constructor(persone: IStudentData) {
+        super(persone);
+        this._phone = '+7(555)555-55-50';
+    }
+    getData(): IStudentData {
+        const IStudent = {
+            name: 'Ivan',
+            secondName: 'Petrov',
+            age: 20,
+            phone: '+7(555)555-55-50',
+        };
+        return IStudent;
+    }
 }
